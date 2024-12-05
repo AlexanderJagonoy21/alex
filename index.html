@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome To TripAdvisor<br> A site Where we bring the hearts of people Closer</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Need Help?</h2>
+      <h2>We're Here To Help You pick the Best Places to Go this December</h2>
+      <p>Want to know whats the best place to Go?</p>
+      <p1>Chat With Our AI Assistant!</p1>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 TripAdvisor</p>
+  </footer>
+  <script type="module">
+    import Chatbox from 'https://cdn.jsdelivr.net/npm/@chaindesk/embeds@latest/dist/chatbox/index.js';
+  
+    const widget = await Chatbox.initBubble({
+      agentId: 'cm4b8emw00lrb20564tmymygg',
+      
+      // optional 
+      // If provided will create a contact for the user and link it to the conversation
+      contact: {
+        firstName: 'John',
+        lastName: 'Doe',
+        email: 'customer@email.com',
+        phoneNumber: '+33612345644',
+        userId: '42424242',
+      },
+      // optional
+      // Override initial messages
+      initialMessages: [
+        'Hello Georges how are you doing today?',
+        'How can I help you ?',
+      ],
+      // optional
+      // Provided context will be appended to the Agent system prompt
+      context: "The user you are talking to is John. Start by Greeting him by his name.",
+    });
+  
+    // open the chat bubble
+    widget.open();
+  
+    // close the chat bubble
+    widget.close()
+  
+    // or 
+    widget.toggle()
+  </script>
+</body>
+</html>
